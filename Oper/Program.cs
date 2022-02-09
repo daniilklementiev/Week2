@@ -42,6 +42,7 @@ namespace Oper
                 Console.WriteLine($"{f1} - {f2} = {f1 - f2}");
                 Console.WriteLine($"{f1} * {f2} = {f1 * f2}");
                 Console.WriteLine($"{f1} / {f2} = {f1 / f2}");
+                Console.WriteLine($"{0} / {f1} = {0 / f1}");
                 Console.WriteLine($"{f1} / {0} = {f1 / 0}");
             }
             catch (Exceptions.FractionException ex)

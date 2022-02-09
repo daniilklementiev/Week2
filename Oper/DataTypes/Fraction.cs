@@ -78,7 +78,12 @@ namespace Oper.DataTypes
         }
         public static Fraction operator /(int n, Fraction f1)
         {
-            return new Fraction { Numerator = f1.Numerator, Denominator = f1.Denominator * n }.reduce();
+            if(n == 0)
+            {
+                return new Fraction { Numerator = 0, Denominator = f1.Numerator }.reduce();
+            }
+            else 
+                return new Fraction { Numerator = f1.Numerator, Denominator = f1.Denominator * n }.reduce();
         }
         public static Fraction operator /(Fraction f1, Fraction f2)
         {
