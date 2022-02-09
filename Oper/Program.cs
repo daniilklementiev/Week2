@@ -6,6 +6,7 @@ namespace Oper
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("Operations");
             Console.CursorVisible = false;
             Console.WriteLine("Loading... ");
