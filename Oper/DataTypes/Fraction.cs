@@ -10,8 +10,8 @@ namespace Oper.DataTypes
     {
         private int _denominator;
         public int Numerator { get; set; }
-        public int Denominator { 
-            get { return _denominator; } 
+        public int Denominator {
+            get { return _denominator; }
             set
             {
                 if (value == 0) throw new Exceptions.FractionException("Denominator zero");
@@ -69,7 +69,7 @@ namespace Oper.DataTypes
 
         public static Fraction operator /(Fraction f1, int n)
         {
-            if(n == 0)
+            if (n == 0)
             {
                 throw new Exceptions.FractionException("Divided by 0");
             }
@@ -78,11 +78,11 @@ namespace Oper.DataTypes
         }
         public static Fraction operator /(int n, Fraction f1)
         {
-            if(n == 0)
+            if (n == 0)
             {
                 return new Fraction { Numerator = 0, Denominator = f1.Numerator }.reduce();
             }
-            else 
+            else
                 return new Fraction { Numerator = f1.Numerator, Denominator = f1.Denominator * n }.reduce();
         }
         public static Fraction operator /(Fraction f1, Fraction f2)
@@ -90,7 +90,7 @@ namespace Oper.DataTypes
             return new Fraction { Numerator = f1.Numerator * f2.Denominator, Denominator = f1.Denominator * f2.Numerator }.reduce();
         }
 
-        public static Fraction operator + (Fraction f1, Fraction f2)
+        public static Fraction operator +(Fraction f1, Fraction f2)
         {
             return new Fraction { Numerator = (f1.Numerator * f2.Denominator + f2.Numerator * f1.Denominator), Denominator = f1.Denominator * f2.Denominator }.reduce();
         }
@@ -103,11 +103,11 @@ namespace Oper.DataTypes
             return ((new Fraction { Numerator = n, Denominator = 1 }) + f1).reduce();
         }
 
-        public static Fraction operator - (Fraction f1, Fraction f2)
+        public static Fraction operator -(Fraction f1, Fraction f2)
         {
-            return (new Fraction { Numerator = f1.Numerator * f2.Denominator - f2.Numerator * f1.Denominator, Denominator =  f1.Denominator * f2.Denominator }).reduce();
+            return (new Fraction { Numerator = f1.Numerator * f2.Denominator - f2.Numerator * f1.Denominator, Denominator = f1.Denominator * f2.Denominator }).reduce();
         }
-        public static Fraction operator - (Fraction f1, int n)
+        public static Fraction operator -(Fraction f1, int n)
         {
             int res = n - (2 * n);
             return (f1 + res).reduce();
@@ -116,6 +116,16 @@ namespace Oper.DataTypes
         {
             int res = n - (2 * n);
             return (res + f1).reduce();
+        }
+
+        public int this[int i]
+        {
+            get
+            {
+                if (i == 0) return Denominator;
+                else if (i == 1) return Numerator;
+                else throw new Exceptions.FractionException("Invalid index");
+            }
         }
     }
 }

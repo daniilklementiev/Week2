@@ -37,13 +37,17 @@ namespace Oper
             var f2 = new DataTypes.Fraction { Numerator = 2, Denominator = 3 };
             try
             {
-
+                Console.WriteLine(f1[0]); 
+                Console.WriteLine(f1[1]); 
+                
                 Console.WriteLine($"{f1} + {f2} = {f1 + f2}");
                 Console.WriteLine($"{f1} - {f2} = {f1 - f2}");
                 Console.WriteLine($"{f1} * {f2} = {f1 * f2}");
                 Console.WriteLine($"{f1} / {f2} = {f1 / f2}");
                 Console.WriteLine($"{0} / {f1} = {0 / f1}");
                 Console.WriteLine($"{f1} / {0} = {f1 / 0}");
+                Console.WriteLine(f1[2]);
+
             }
             catch (Exceptions.FractionException ex)
             {
