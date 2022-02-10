@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Oper.DataTypes
 {
-    internal class Fraction
+    public class Fraction : ICloneable
     {
         private int _denominator;
         public int Numerator { get; set; }
@@ -54,6 +54,12 @@ namespace Oper.DataTypes
             n /= gcd(a, b);
             return n;
         }
+
+        public object Clone()
+        {
+            throw new NotImplementedException();
+        }
+
         public static Fraction operator *(Fraction f1, Fraction f2)
         {
             return new Fraction { Numerator = f1.Numerator * f2.Numerator, Denominator = f1.Denominator * f2.Denominator }.reduce();
