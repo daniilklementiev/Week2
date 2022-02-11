@@ -8,7 +8,6 @@ namespace Interfaces.Interfaces
 {
     internal interface IDiscountable
     {
-        float Discount { get; set; }
-        void PrintDisc();
+        float Discount { get; set; }  
     }
 }

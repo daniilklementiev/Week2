@@ -9,10 +9,11 @@ namespace Interfaces
         {
             Console.WriteLine("Hello Shop!");
             var Products = new List<Product>();
-            Products.Add(new Fridge     { Name = "Dnepr",                 Price = 100500 });
-            Products.Add(new Fridge     { Name = "Frost",                 Price = 100499 });
+            Products.Add(new Fridge     { Name = "Dnepr",                 Price = 100500               });
+            Products.Add(new Fridge     { Name = "Frost",                 Price = 100499               });
             Products.Add(new OldFridges { Name = "Sniege",                Price = 10499, Discount = 25 });
-            Products.Add(new Book       { Name = "Knuth",                 Price = 500 });
+            Products.Add(new OldBook    { Name = "Knuth old",             Price = 500,   Discount = 25 });
+            Products.Add(new Book       { Name = "Knuth",                 Price = 500                  });
 
             Console.WriteLine("\bAll products");
             foreach (var item in Products)
@@ -32,10 +33,11 @@ namespace Interfaces
             {
                 if (item is IDiscountable)
                 {
-                    OldFridges ip = item as OldFridges;
-                    Console.WriteLine($"{item.Name} with {ip?.Discount}% costs {ip?.newPrice}. Old price : {item.Price}");
+                    IDiscountable ip = item as IDiscountable;
+                    Console.WriteLine($"{item.Name} disc {ip.Discount} price {item.Price} new price {item.Price - (item.Price * (ip.Discount / 100))}"); ;
                 }
             }
+            // Вывод: https://prnt.sc/26u0k20
         }
     }
 }
