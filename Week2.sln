@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week2", "07022022\Week2.csproj", "{AF846774-908E-4622-8448-7983E529E5F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oper", "Oper\Oper.csproj", "{285072EA-8CA6-4F55-8CE2-6008B5A12760}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oper", "Oper\Oper.csproj", "{285072EA-8CA6-4F55-8CE2-6008B5A12760}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{3DB34B75-8264-4A2A-9393-6381EC389F77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{285072EA-8CA6-4F55-8CE2-6008B5A12760}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{285072EA-8CA6-4F55-8CE2-6008B5A12760}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{285072EA-8CA6-4F55-8CE2-6008B5A12760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DB34B75-8264-4A2A-9393-6381EC389F77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DB34B75-8264-4A2A-9393-6381EC389F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DB34B75-8264-4A2A-9393-6381EC389F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DB34B75-8264-4A2A-9393-6381EC389F77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
