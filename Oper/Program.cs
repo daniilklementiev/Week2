@@ -12,12 +12,17 @@ namespace Oper
             c.Re = 3;
             Console.WriteLine($"C : {c} cPseudo : {cPseudo} cClone : {cClone}");
             Console.WriteLine(c.Reflect());
+            var f = new DataTypes.Fraction { Numerator = -2, Denominator = 3 };
+            Console.WriteLine(f);
+            Console.WriteLine(f.Inverse());
+            Console.WriteLine(f.Abs());
         }
         static void Main2(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("Operations");
-            /* Console.CursorVisible = false;
+            #region Loading
+            Console.CursorVisible = false;
              Console.WriteLine("Loading... ");
              int pos = Console.CursorTop;
              Console.SetCursorPosition(11, 0);
@@ -47,7 +52,9 @@ namespace Oper
              Console.WriteLine();
              Console.ResetColor();
              Console.Clear();
-             Console.ForegroundColor = ConsoleColor.Green;*/
+             Console.ForegroundColor = ConsoleColor.Green;
+            #endregion 
+
             #region Complex
             /*var c0 = new DataTypes.Complex { Re = 0, Im = 0 };
             var c1 = new DataTypes.Complex { Re = 1, Im = -2 };
